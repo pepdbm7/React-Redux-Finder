@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-weight: 400;
+  font-family: "Macondo Swash Caps", cursive;
+  overflow-x: visible;
+  font-size: 16px;
+  background: #2a2a2a;
+}
+
+.landing-page {
+  height: 100vh;
+}
+
+.landing-bg {
+  height: 100vh;
+  background: url("./gnomes-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: rgb(187, 204, 38);
+  color: black;
+  cursor: pointer;
+}
+
+.name {
+  text-transform: capitalize;
+  color: hsl(41, 66%, 78%);
+  font-size: 25px;
+}
+
+.label {
+  width: 200px;
+}
+
+.card {
+  background: hsla(147, 70%, 72%, 0.822);
+  margin: 15px;
+  color: white;
+  font-family: "Franklin Gothic Medium";
+}
+
+.card-header {
+  height: 150px;
+  background: #d8ebbc;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.card img {
+  height: 130px;
+  width: auto;
+  border-radius: 5px;
+  border: 5px solid white;
+}
+
+.card-body h1 {
+  color: #169116;
+  font-size: 5vw;
+  font-weight: 700;
+  text-align: center;
+}
