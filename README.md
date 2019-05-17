@@ -1,6 +1,6 @@
 # gnome finder
 
-It is an app made with **React** and **Redux** for a job application, it is a searcher with 4 optional filters.
+It is a responsive app made with **React** and **Redux** for a job application, it is a searcher with 4 optional filters.
 
 The filters are applied in *realtime* whenever the inputs values change.
 
