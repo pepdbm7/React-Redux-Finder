@@ -91,8 +91,6 @@ const logic = {
 
     const uniqueColors = await [...new Set(colors)];
 
-    if (uniqueColors.length === 5) throw Error("There are not 5 colors");
-
     return uniqueColors;
   }
 };
