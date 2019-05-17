@@ -97,6 +97,6 @@ const logic = {
   }
 };
 
-// export default logic;
+export default logic;
 
-module.exports = logic;
+// module.exports = logic;
