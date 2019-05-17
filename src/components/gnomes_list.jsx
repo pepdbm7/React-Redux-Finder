@@ -44,8 +44,8 @@ class GnomesList extends Component {
                       <th scope="row">{g.name} </th>
                       <td>{g.age}</td>
                       <td>{g.hair_color}</td>
-                      <td>{g.weight}</td>
-                      <td>{g.height}</td>
+                      <td>{parseInt(g.weight)}</td>
+                      <td>{parseInt(g.height)}</td>
                     </tr>
                   ))
                 : null
@@ -58,8 +58,8 @@ class GnomesList extends Component {
                     <th scope="row">{g.name} </th>
                     <td>{g.age}</td>
                     <td>{g.hair_color}</td>
-                    <td>{g.weight}</td>
-                    <td>{g.height}</td>
+                    <td>{parseInt(g.weight)}</td>
+                    <td>{parseInt(g.height)}</td>
                   </tr>
                 ))}
           </tbody>
