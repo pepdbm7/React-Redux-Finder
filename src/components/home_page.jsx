@@ -118,9 +118,9 @@ class HomePage extends Component {
     const ages = [0, 50, 100, 150, 200, 250, 300, 350, 400];
 
     return (
-      <div className="text-light">
+      <div>
         <NavBar />
-        <div className="mx-3">
+        <div className="text-center mx-3 home">
           <h5 className="my-4">
             <span className="name">{username}</span>, <br />
             there are more than one thousand gnomes in this area so you can use
@@ -207,7 +207,7 @@ class HomePage extends Component {
           </form>
 
           {/* gnomes list: */}
-          <h2 className="center-text text-light">
+          <h2 className="center-text">
             {filterName || minimumAge || maximumAge || filterColor ? (
               filteredGnomes.length ? (
                 `Found ${filteredGnomes.length} gnomes matching your filters!`

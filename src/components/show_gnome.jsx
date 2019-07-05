@@ -48,7 +48,7 @@ class ShowGnome extends Component {
             <img src={`${thumbnail}`} alt="gnomo profile pic" />
           </div>
           <div className="card-body">
-            <h1>{name}</h1>
+            <h1 className="card-title text-light">{name}</h1>
             <p>I am {age} years old</p>
             <p>My hair is {hair_color}</p>
             <p>
@@ -57,12 +57,12 @@ class ShowGnome extends Component {
             {friends ? (
               friends.length === 1 ? (
                 <p>
-                  My friend is <span className="text-warning">{friends}</span>
+                  My friend is <span className="card-details">{friends}</span>
                 </p>
               ) : (
                 <p>
                   My friends are:{" "}
-                  <span className="text-warning">{friendsTxt}</span>
+                  <span className="card-details">{friendsTxt}</span>
                 </p>
               )
             ) : (
@@ -71,12 +71,13 @@ class ShowGnome extends Component {
             {professions ? (
               professions.length === 1 ? (
                 <p>
-                  I work as a <span className="text-info">{professions}</span>
+                  I work as a{" "}
+                  <span className="card-details">{professions}</span>
                 </p>
               ) : (
                 <p>
                   I don't have much time as I work as a :{" "}
-                  <span className="text-info">{professionsTxt}</span>
+                  <span className="card-details">{professionsTxt}</span>
                 </p>
               )
             ) : (

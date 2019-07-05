@@ -21,8 +21,8 @@ class GnomesList extends Component {
 
     return (
       <Fragment>
-        <table className="table table-hover text-light">
-          <thead className="thead-dark">
+        <table className="table table-hover">
+          <thead className="table-header text-light">
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Age</th>
@@ -67,7 +67,7 @@ class GnomesList extends Component {
         {((filterName || minimumAge || maximumAge || filterColor) &&
           !filteredGnomes.length) ||
         (filteredGnomes.length && filteredGnomes.length <= 20) ? null : (
-          <p className="text-center my-4 text-warning">... ETC</p>
+          <p className="text-center my-4 text-info">... ETC</p>
         )}
       </Fragment>
     );

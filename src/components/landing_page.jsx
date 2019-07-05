@@ -25,15 +25,15 @@ class LandingPage extends Component {
     const { handleChange, handleSubmit } = this;
 
     return (
-      <div className="text-light text-center landing-bg">
-        <h1 className="py-5">Welcome to Gnome Finder</h1>
+      <div className="landing text-center">
+        <h1 className="py-5 landing-title">Welcome to Gnome Finder</h1>
         <p className="py-4">
-          This app is private, so in order to access and to use the app you just
-          should provide your username:
+          This app is private, so in order to use it you should provide a
+          username:
         </p>
-        <form className="col-md-4 mx-auto" onSubmit={handleSubmit}>
+        <form className="col-md-4 mx-auto form-landing" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="text-light mr-2" htmlFor="username">
+            <label className="mr-3" htmlFor="username">
               Username:
             </label>
             <input
@@ -48,6 +48,17 @@ class LandingPage extends Component {
             </button>
           </div>
         </form>
+        <div class="imagesContainer">
+          <img
+            src="https://images.freeimages.com/images/large-previews/3d7/just-a-swingin-2-1557548.jpg"
+            alt="two gnomes"
+          />
+          <img
+            class="fadeInClass"
+            src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/rich_media_quiz/topic/rmq_dating/getty_rf_twofinger.jpg?resize=692px:*"
+            alt="fingerslove"
+          />
+        </div>
       </div>
     );
   }

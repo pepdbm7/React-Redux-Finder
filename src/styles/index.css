@@ -8,48 +8,194 @@ body {
   font-family: "Macondo Swash Caps", cursive;
   overflow-x: visible;
   font-size: 16px;
-  background: #2a2a2a;
 }
 
-.landing-page {
+/*LANDING VIEW*/
+
+.landing {
+  margin: 0;
+  width: 100vw;
   height: 100vh;
+  background-image: linear-gradient(
+    to right,
+    whitesmoke,
+    rgb(193, 235, 253),
+    hsl(198, 95%, 85%),
+    rgb(154, 221, 250),
+    rgb(192, 201, 251),
+    #aab7fd
+  );
+  background-size: 600%;
+  background-position: 0 0;
+  box-shadow: inset 0 0 5em rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", Arial, sans-serif;
+  justify-content: center;
+  /* Animation */
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-name: gradients;
+}
+@keyframes gradients {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 50% 0;
+  }
+  50% {
+    background-position: 90% 0;
+  }
+  60% {
+    background-position: 60%;
+  }
+  75% {
+    background-position: 40%;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
-.landing-bg {
-  height: 100vh;
-  background: url("./gnomes-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.landing-title {
+  font-family: "Macondo Swash Caps", cursive;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.form-landing {
+  max-height: 10px;
+}
+
+.imagesContainer {
+  margin: 5rem auto;
+  width: 500px;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
+}
+
+.imagesContainer img {
+  width: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* animation styles */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInClass {
+  animation-name: fadeIn;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.landing {
+  color: #3b7097;
+}
+
+input {
+  caret-color: #4a8db7;
+}
+::-webkit-input-placeholder,
+select {
+  /* Edge */
+  color: #4a8db7 !important;
+}
+
+:-ms-input-placeholder,
+select {
+  /* Internet Explorer */
+  color: #4a8db7 !important;
+}
+
+::placeholder,
+select {
+  color: #4a8db7 !important;
+}
+
+select,
+input {
+  border: 2px solid #3b7097 !important;
+}
+
+/* ------------------------ */
+/*HOME VIEW*/
+
+.navbar {
+  background-color: #3b7097;
+}
+
+nav > h1 {
+  color: #a2e2f8;
+}
+
+.btn-navbar {
+  background-color: #a2e2f8;
+}
+
+.btn-navbar:hover {
+  background-color: hsl(203, 54%, 61%);
+  color: whitesmoke;
+}
+
+.table-header {
+  background-color: #4a8db7;
 }
 
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
-  background-color: rgb(187, 204, 38);
-  color: black;
+  background-color: #a2e2f8;
+  color: whitesmoke;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .name {
   text-transform: capitalize;
-  color: hsl(41, 66%, 78%);
+  color: #75bde0;
   font-size: 25px;
+  font-weight: 900;
 }
 
 .label {
   width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4a8db7;
+  font-weight: 800;
 }
 
+/* ------------------------ */
+/*GNOME VIEW*/
+
 .card {
-  background: hsla(147, 70%, 72%, 0.822);
+  background: #3b7097;
   margin: 15px;
   color: white;
   font-family: "Franklin Gothic Medium";
 }
 
 .card-header {
-  height: 150px;
-  background: #d8ebbc;
+  height: 200px;
+  background: #a1e1fa;
   display: flex;
   justify-content: center;
 }
@@ -62,15 +208,19 @@ body {
 }
 
 .card img {
-  height: 130px;
+  height: 180px;
   width: auto;
   border-radius: 5px;
-  border: 5px solid white;
+  border: 5px solid #4a8db7;
 }
 
 .card-body h1 {
-  color: #169116;
+  color: #3b7097;
   font-size: 5vw;
   font-weight: 700;
   text-align: center;
+}
+
+.card-details {
+  color: #a1e1fa;
 }

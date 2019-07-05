@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 const _NavBar = ({ buttonBack }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success justify-content-between d-flex">
+    <nav className="navbar navbar-expand-lg navbar-dark justify-content-between d-flex">
       <h1>
         Gnome{" "}
         <span style={{ color: "red", textDecoration: "line-through" }}>
@@ -17,7 +17,7 @@ const _NavBar = ({ buttonBack }) => {
 
       <div className="row justify-content-space-between">
         {buttonBack ? (
-          <Link to={"/finder"} className="btn btn-light mr-4">
+          <Link to={"/finder"} className="btn btn-navbar mr-4">
             Back
           </Link>
         ) : null}
