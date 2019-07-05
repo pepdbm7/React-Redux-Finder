@@ -3,7 +3,7 @@
 It is a responsive app made with **React** and **Redux**, and styles with CSS and Bootstrap, for a job application, it is a searcher with 4 optional filters which can be used simultaneously.
 
 ## Try Demo
- https://thirsty-neumann-4260ef.netlify.com/#/finder
+ https://thirsty-neumann-4260ef.netlify.com
 
 
 ## Run it locally
