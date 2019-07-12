@@ -5,7 +5,7 @@ It is a responsive app made with **React** and **Redux** for a job application, 
 The filters are applied in *realtime* whenever the inputs values change.
 
 ## Deployed
- To use the app click [here](https://thirsty-neumann-4260ef.netlify.com/#/finder) !
+ To use the app click [here](https://thirsty-neumann-4260ef.netlify.com/) !
 
 
 ## Run it locally
