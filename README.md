@@ -1,11 +1,11 @@
-# gnome finder
+# Gnome finder
 
-It is a responsive app made with **React** and **Redux** for a job application, it is a searcher with 4 optional filters.
+It is a responsive app made with **React** and **Redux**, and styles with CSS and Bootstrap, for a job application, it is a searcher with 4 optional filters which can be used simultaneously.
 
 The filters are applied in *realtime* whenever the inputs values change.
 
 ## Deployed
- To use the app click [here](https://thirsty-neumann-4260ef.netlify.com/) !
+ To use the app click [here](https://thirsty-neumann-4260ef.netlify.com) !
 
 
 ## Run it locally
