@@ -1,7 +1,6 @@
 let countFilters = 0;
 
 const logic = {
-  //promise with Promise.then.catch
   filterQuery(allGnomes, filterName, minimumAge, maximumAge, filterColor) {
     return Promise.resolve()
       .then(() => {
@@ -83,18 +82,24 @@ const logic = {
 
   //promise with ASYNC / AWAIT:
   async setColors(gnomes) {
-    if (typeof gnomes !== "object") throw TypeError("gnomes is not a array");
+    return Promise.resolve().then(() => {
+      if (typeof gnomes !== "object") throw TypeError("gnomes is not a array");
+      if (!gnomes.length) throw Error("No gnomes to set colors from");
 
-    let colors = [];
+      let colors = [];
 
-    await gnomes.forEach(g => colors.push(g.hair_color));
+      gnomes.forEach(g => colors.push(g.hair_color));
 
-    const uniqueColors = await [...new Set(colors)];
+      const uniqueColors = [...new Set(colors)];
 
-    return uniqueColors;
+      if (uniqueColors.length !== 5) throw Error("There are not 5 colors");
+
+      return uniqueColors;
+    });
   }
 };
+//comment next line for testing:
+// export default logic;
 
-export default logic;
-
-// module.exports = logic;
+//and uncomment next line for testing:
+module.exports = logic;
