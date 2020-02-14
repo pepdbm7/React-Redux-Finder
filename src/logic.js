@@ -60,7 +60,6 @@ const logic = {
       })
       .then(res => {
         //count repeated times each gnome, and only return the ones found by every used filter
-
         countFilters = 0;
 
         const findRepeated = res.result.reduce((a, b) => {
@@ -99,7 +98,7 @@ const logic = {
   }
 };
 //comment next line for testing:
-// export default logic;
+export default logic;
 
 //and uncomment next line for testing:
-module.exports = logic;
+// module.exports = logic;

@@ -8,13 +8,13 @@ import LandingPage from "./components/landing_page";
 import HomePage from "./components/home_page";
 import ShowGnome from "./components/show_gnome";
 
-const App = () => {
+const App = ({ history }) => {
   return (
     <Provider store={store}>
       <div className="App">
         <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/finder" component={HomePage} />
+          <Route exact path="/" component={LandingPage} history={history} />
+          <Route exact path="/finder" component={HomePage} history={history} />
           <Route exact path="/gnome/:id" component={ShowGnome} />
         </Switch>
       </div>

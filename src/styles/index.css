@@ -10,6 +10,11 @@ body {
   font-size: 16px;
 }
 
+a,
+button {
+  transition: 0.4s all ease !important;
+}
+
 /*LANDING VIEW*/
 
 .landing {
@@ -62,6 +67,7 @@ body {
   font-family: "Macondo Swash Caps", cursive;
   text-decoration: underline;
   text-transform: uppercase;
+  color: darkblue;
 }
 
 .form-landing {
@@ -70,7 +76,8 @@ body {
 
 .imagesContainer {
   margin: 5rem auto;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 280px;
   position: relative;
   overflow: hidden;
@@ -78,7 +85,8 @@ body {
 }
 
 .imagesContainer img {
-  width: 500px;
+  width: inherit;
+  height: inherit;
   position: absolute;
   top: 0;
   left: 0;
@@ -142,10 +150,20 @@ input {
 
 .navbar {
   background-color: #3b7097;
+  padding: 8px 3em;
 }
 
-nav > h1 {
+h1 {
   color: #a2e2f8;
+  margin: 0;
+}
+.crossed {
+  color: red;
+  text-decoration: line-through;
+}
+
+.tinder {
+  color: white;
 }
 
 .btn-navbar {
@@ -157,45 +175,84 @@ nav > h1 {
   color: whitesmoke;
 }
 
-.table-header {
-  background-color: #4a8db7;
+.home {
+  padding: 8px 3em;
+  overflow-x: hidden;
 }
 
-.table-hover tbody tr:hover td,
-.table-hover tbody tr:hover th {
-  background-color: #a2e2f8;
-  color: whitesmoke;
-  text-decoration: underline;
+.intro__text,
+.resultsFeedback {
+  margin: 35px auto;
+  font-family: cursive;
+}
+
+.filters__form {
+  margin: 15px auto;
+  width: fit-content;
+}
+
+.form__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__item > input,
+.form__item > select {
+  width: 350px;
   cursor: pointer;
 }
 
-.name {
+.table-header {
+  background-color: #4a8db7;
+  pointer-events: none;
+  user-select: none;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #bbe9f8;
+  color: #4a8db7;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+
+.name,
+.label {
   text-transform: capitalize;
-  color: #75bde0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4a8db7;
   font-size: 25px;
-  font-weight: 900;
 }
 
 .label {
   width: 200px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.foundNumber {
   color: #4a8db7;
-  font-weight: 800;
 }
 
 /* ------------------------ */
 /*GNOME VIEW*/
+
+.container {
+  padding: 8px 3em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
 
 .card {
   background: #3b7097;
   margin: 15px;
   color: white;
   font-family: "Franklin Gothic Medium";
+  box-shadow: 0 0 12px 4px darkgrey;
 }
 
 .card-header {
   height: 200px;
-  background: #a1e1fa;
+  background: whitesmoke;
   display: flex;
   justify-content: center;
 }
@@ -223,4 +280,42 @@ nav > h1 {
 
 .card-details {
   color: #a1e1fa;
+}
+
+/* mobile, responsive */
+
+@media (max-width: 580px) {
+  .navbar,
+  .home,
+  .container,
+  .landing {
+    flex-direction: column;
+    text-align: center;
+    padding: 8px 1em;
+  }
+
+  .landing {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .form__item {
+    width: 100%;
+    margin: 0 auto 10px;
+  }
+
+  .form__item > label {
+    width: inherit;
+    text-align: center;
+  }
+
+  .form__item > input,
+  .form__item > select {
+    margin: 10px auto;
+    width: 100% !important;
+  }
+
+  .table {
+    font-size: 0.7em;
+  }
 }

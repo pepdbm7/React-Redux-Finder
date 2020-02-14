@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 
 //redux:
 import { connect } from "react-redux";
@@ -11,18 +11,13 @@ import NavBar from "./navbar";
 import { showBackButton, hideBackButton } from "../actions/backButton";
 import { fetchGnomeById } from "../actions/gnomes";
 
-class ShowGnome extends Component {
-  componentDidMount() {
-    const id = parseInt(this.props.match.params.id);
-    this.props.showBackButton();
-    this.props.fetchGnomeById(id);
-  }
-  componentWillUnmount() {
-    this.props.hideBackButton();
-  }
-
-  render() {
-    const {
+const ShowGnome = props => {
+  const {
+    match,
+    showBackButton,
+    fetchGnomeById,
+    hideBackButton,
+    singleGnome: {
       name,
       age,
       friends,
@@ -31,18 +26,40 @@ class ShowGnome extends Component {
       height,
       thumbnail,
       professions
-    } = this.props.singleGnome;
+    }
+  } = props;
 
-    const weightTofixed = weight && parseInt(weight);
-    const heightTofixed = height && parseInt(height);
-    const friendsTxt =
+  const [weightTofixed, setWeightTofixed] = useState("");
+  const [heightTofixed, setHeightTofixed] = useState("");
+  const [friendsTxt, setFriendsTxt] = useState("");
+  const [professionsTxt, setProfessionsTxt] = useState("");
+
+  useEffect(() => {
+    const id = parseInt(match.params.id);
+
+    showBackButton();
+    fetchGnomeById(id);
+    return () => hideBackButton();
+  }, [fetchGnomeById, hideBackButton, match, showBackButton]);
+
+  useEffect(() => {
+    const numberWeight = weight && parseInt(weight);
+    const numberHeight = height && parseInt(height);
+    const friendsSentence =
       friends && friends.join(", ").replace(/,(?=[^,]*$)/, " and");
-    const professionsTxt =
+    const professionsSentence =
       professions && professions.join(", ").replace(/,(?=[^,]*$)/, " and");
 
-    return (
-      <div>
-        <NavBar />
+    setWeightTofixed(numberWeight);
+    setHeightTofixed(numberHeight);
+    setFriendsTxt(friendsSentence);
+    setProfessionsTxt(professionsSentence);
+  }, [weight, height, friends, professions]);
+
+  return (
+    <>
+      <NavBar />
+      <div className="container">
         <div className="card">
           <div className="card-header">
             <img src={`${thumbnail}`} alt="gnomo profile pic" />
@@ -89,9 +106,9 @@ class ShowGnome extends Component {
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 
 const mapStateToProps = state => ({ singleGnome: state.gnome });
 
@@ -101,7 +118,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowGnome);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowGnome);
