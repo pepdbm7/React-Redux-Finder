@@ -1,8 +1,6 @@
 # Gnome finder
 
-It is a responsive app made with **React** and **Redux**, and styles with CSS and Bootstrap, for a job application, it is a searcher with 4 optional filters which can be used simultaneously.
-
-The filters are applied in *realtime* whenever the inputs values change.
+It is a responsive app made with **React Hooks** and **Redux**, and styles with CSS and Bootstrap. It is a live searcher with 4 optional filters which can be used simultaneously, it uses the sessionstorage to manage the username and it has 3 pages: landing, a homepage and a gnome-details.
 
 ## Deployed
  To use the app click [here](https://thirsty-neumann-4260ef.netlify.com) !
@@ -14,5 +12,6 @@ Download or clone this repository and in the project directory, just run:
 ### `npm start`
 
 for testing:
-### `cd src`  
+### `cd src`
+...uncomment last lines of the file 'logic.js'...
 ### `mocha logic.test.js`
